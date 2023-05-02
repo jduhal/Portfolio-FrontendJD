@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="container-fluid rounded my-0 h-100">
+    <div class="row">
+        <div class="divisor">
+        <h1 class="text-center">Habilidades</h1>
+    </div>
+<div class="col-lg-1">
+</div>
+        <div class="row">
+            <div class="d-flex justify-content-around d-flex flex-wrap py-3">
+                <div class="text-center s col-sm-12 col-md-6 col-lg-4 d-flex
+                    flex-column flex-wrap my-2"
+                    *ngFor="let skill of
+                    skill">
+                    <circle-progress
+                        [percent]="(skill.porcentaje)"
+                        [radius]="120"
+                        [outerStrokeWidth]="12"
+                        [innerStrokeWidth]="4"
+                        [outerStrokeColor]="'#D95030'"
+                        [innerStrokeColor]="'#FFFFFF'"
+                        [imageSrc]="(skill.img)"
+                        [responsive]="true"
+                        [showTitle]="true"
+                        [title]="(skill.nombre)"
+                        [imageWidth]="150"
+                        [imageHeight]="130"
+                        [showImage]="true"
+                        [showUnits]="true"
+                        [backgroundColor]="'#000000'" 
+                        [showBackground]="false">
+                    </circle-progress>
+                    <li class="list-group-item d-flex justify-content-center align-items-center mt-2 "
+                        *ngIf="isLogged"><button class="btn btn-warning me-3"
+                        routerLink="editarskill/{{skill.id}}"><img src="../../../assets/images/editar.png"></button><button class="btn btn-danger"
+                            (click)="delete(skill.id)"><img src="../../../assets/images/borrar.png"></button></li>
+                </div>
+                <div class="d-flex justify-content-center align-items-center
+                    my-4 flex-wrap">
+                    <button type="button" class="botonera btn d-flex col-sm-5
+                        col-xs-12 flex-wrap"
+                        routerLink="/nuevaskill"
+                        *ngIf="isLogged"> +</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

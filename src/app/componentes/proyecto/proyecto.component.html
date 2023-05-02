@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="container-fluid rounded my-0 h-100">
+    <div class="row">
+        <div class="divisor">
+        <h1 class="text-center">Proyecto</h1>
+        </div>
+        <div class="col-lg-1">
+        </div>
+        <div class="d-flex justify-content-around d-flex flex-wrap">
+            <div class="card col-md-5 d-flex flex-wrap mx-2 my-2" style="width:
+                20rem;" *ngFor="let
+                proy of proyecto">
+                <img class="card-img-top" src="{{proy.img}}" alt="Card
+                    image cap">
+                <div class=" d-flex row align-items-start">
+                    <h5 class="card-title text-center text-light">{{proy.nombre}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center text-light">{{proy.descripcion}}</li>
+                    <li class="list-group-item text-center text-light">{{proy.url}}</li>
+                    <li class="list-group-item d-flex justify-content-around align-items-end h-100 "
+                        *ngIf="isLogged"><button class="btn btn-warning me-3"
+                        routerLink="editarproyecto/{{proy.id}}"><img src="../../../assets/images/editar.png"></button><button class="btn btn-danger"
+                            (click)="delete(proy.id)"><img src="../../../assets/images/borrar.png"></button></li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="d-flex justify-content-center align-items-center my-4">
+            <button type="button" class="botonera btn d-flex col-sm-5
+                col-xs-12 flex-wrap"
+                routerLink="/nuevoproyecto" *ngIf="isLogged"> +
+            </button>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

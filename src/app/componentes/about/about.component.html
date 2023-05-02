@@ -1,0 +1,61 @@
+<!-- font awesome -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+  crossorigin="anonymous" />
+<div class="container-fluid d-flex justify-content-center my-0 mx-0 w-100 py-4
+  flex-wrap ">
+  <section class="w-100 d-">
+    <header [ngStyle]="{'background-image': 'url(' + persona.banner + ')'}">
+      <img src="{{persona.img}}" />
+    </header>
+    <h1>{{persona.nombre}} {{persona.apellido}}</h1>
+
+    <h3 class="text-center text-light">
+      {{persona.titulo}}
+    </h3>
+
+    <div class="d-flex w-100 flex-wrap justify-content-center">
+
+      <div class="divisor col-sm-5 d-flex flex-column flex-wrap col-xs-12
+        text-center">
+        <h4>Informacion Personal:</h4>
+        <h5>Fecha de nacimiento: </h5>
+        <h5>{{persona.fecha}}</h5>
+        <h5>Ciudad:</h5>
+        <h5>{{persona.ciudad}}</h5>
+      </div>
+      <div class="divisor col-sm-5 d-flex flex-column flex-wrap col-xs-12
+        text-center">
+        <h4>Contacto:</h4>
+        <h5>📧 E-mail:</h5>
+        <h5>{{persona.email}}</h5>
+        <h5>📱 Celular: </h5>
+        <h5>{{persona.celular}}</h5>
+      </div>
+      <div class="divisor col-sm-5 d-flex justify-content-center flex-wrap
+        col-xs-12 ">
+        <h4 class="text-center d-block ">Redes Sociales</h4>
+        <div class="container d-flex justify-content-center flex-wrap">
+          <a href={{persona.github}} class="me-3" ><img
+              src="../../../assets/images/GitLogo.png" ></a>
+          <a href={{persona.whatsapp}} class="me-3"><img
+              src="../../../assets/images/WSP.png" ></a>
+          <a href={{persona.linkedin}} class="me-3"><img
+              src="../../../assets/images/LinkdeinLogo.png" ></a>
+        </div>
+      </div>
+    </div>
+    <div class="divisor text-center">
+      <h4>Descripcion:</h4>
+      <h5>{{persona.descripcion}} </h5>
+    </div>
+  </section>
+  <div class="px-2">
+    <a type="button" class="btn btn-warning w-100 my-2"
+          routerLink="/editarinformacion/1" *ngIf="isLogged">
+            Editar acerca de mi
+    </a>
+  </div>
+
+</div>

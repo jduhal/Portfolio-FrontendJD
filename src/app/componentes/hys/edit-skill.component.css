@@ -1,0 +1,14 @@
+.divisor {
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #c40b0b59;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  
+  
+  }
+
+  *{
+    text-align: center;
+  }
