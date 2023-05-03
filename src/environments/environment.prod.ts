@@ -11,5 +11,5 @@ export const environment = {
   },
   
   production: true,
-  URL:'https://testrender-r0n6.onrender.com'
+  URL:'https://julioduhalde-portfolio.onrender.com'
 };
